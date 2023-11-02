@@ -1,0 +1,136 @@
+6.    A = { 1, 2, 3, 4}
+	uRv if (u + 2v) is odd
+
+	R = {(u, v): u + 2v is odd}
+	R = [(1,1), (1,2), (1,3), (1,4), (3,1), (3,2), (3,3), (3,4)]
+
+		1	2 	3	4
+	1	T	T	T	T
+	2 	F	F	F	F
+	3	T	T	T	T
+	4	F	F	F	F
+11.
+	S = {1..6}
+	A = {1, 2, 4, 5}
+	B = {3, 5}
+
+	a = (1, 1, 0, 1, 1, 0)
+	b = (0, 0, 1, 0, 1, 0)
+
+	A intersection B : a and b = (1, 1, 0, 1, 0, 1)
+	----------------
+		  {S}
+
+	B^"c": not b = (1, 1, 0, 1, 1, 1)
+	A union B^"c": a or (not b) = (1, 1, 0, 1, 1, 1)
+
+	A union B: a or b = (1, 1, 1, 1, 1, 0)
+
+
+Properties of relations
+Relation "R" on a set "A" is: 
+	-> reflexive	 when xR𝓍 Ɐ𝓍 Є A
+	A given relation R is reflexive if (x, x)  Є R for all possible values of x
+	On a diagraph, a relation is reflexive if there is always a loop from every vertice to itself.
+	-> symmetric	 if xR𝓎 then yR𝓍 Ɐ𝓍₁𝓎 Є A.
+	On a diagraph, a relation is symmetric if whenever there is an edge from x to y, there is an edge from y to x.
+	->	antisymmetric	if xRy and yRx, then y = x  Ɐ𝓍₁𝓎 Є A
+	and x≠y then (y₁ x) 					//The board was erased here
+	A given relation R is antisymmetric if there is at most one edge between ant
+
+	R = { (a,a),(a,b),(b,c),(a,c),(a,d),(b,d),(c,d),(b,b),(c,c)}
+	on the set A = {a,b,c,d} 	Determine if R is reflexive, symmetric, antisymmetric or transitive.
+		(d,d) ∉ R => not reflexive
+		(a,b) ∈ R but (b,a) ∉ R  -|
+		(b,c) ∈ R but (c,b) ∉ R   | Antisymmetric
+		(a,c) ∈ R but (c,a) ∉ R   |
+		(a,d) ∈ R but (d,a) ∉ R  -|
+		...
+
+	DEF:
+		Relation R on a set A that is reflexive, symmetric and transitive is called an equivalence relation.
+		Relation R on a set A that is reflexive, antisymmetric and transitive is called a partial order.
+
+Example 11:
+	Determine whether each side of the relations is reflexive, symmetric, antisymmetric or transitive. Hence, determine if each of the relations is and equivalence relation, a partial order, or nether
+
+	a) R = {(x,y): x is a divisor of y} on N
+	Every natural number is a divisor of itself, therefore	 reflexive
+	2 is a divisor of 6 (2, 6) ∈ R, but 6 is not a divisor of 2, therefore its is not symmetric
+	if x is a divisor of y and y is a divisor only if x = y, therefore it is 	antisymmetric
+
+	Suppose x is a divisor of y => y = kx
+	Suppose y is a divisor of z => z = my
+								=> z = m(kx)
+								=> z= mkx
+							  is also a divisor of Z
+								*  Transitive
+		partial order
+
+	b) T = {(x,y): x≠y} on Z
+	(1, 1) ∉ T => not reflexive
+	 if (x,y) ∈ T => x≠y
+	 			=> y≠x => (y,x) ∈ T
+	 				Symmetric
+	 (1,2) ∈ T but (1,1) ∉ T
+	 (2,1) ∈ 	Not transitive
+
+	 	Either equivalence relation or partial order;
+
+	 c) u = {(x,y): x has the same age as y} on the set of all people
+	 any person has the same age as themselves => reflexive
+	 if x has the same age as y, ((x,y) ∈ u)
+	 then y has the same age as x ((y,x) ∈ u) => symmetric
+	 then x has the same age as z ((x,z) ∈ u)
+		Equivalence relation
+
+	d) v = {(x,y): xy >= 0} on Z
+
+	if x = 0 => x^2 = 0 Ɐx ∈ Z
+	if x ≠ 0 => x^2 > 0 (x,x) ∈ Z
+	Since xy = yx:
+		if xy >= meaning (x,y) ∈ V
+		then yx >=(y,x) ∈ V
+			symmetric
+			not transitive
+		Neither
+
+	Closure of a property
+	DEF:
+		If a relation R on a set A does not posess a property P, it may be possible to extend it to be a relation R^* , which does. We add to R additional ordered pairs so that the resulting relation R^*
+		posesses the property P. If R^* is the smallest such set for which property P holds, then R^* is called the 	closure of R	with respect toproperty P
+
+	example 12: Let A = {1,2,3} and R be the following relation on A:
+	R = {(1,1),(1,2),(1,3),(3,1),(2,3)}
+	The relation is not reflexive, not symmertic, not reflexive and not transitive.
+	find the corresponding closures:
+
+	Reflexive closure
+	R^* = {(1,1),(1,2),(1,3),(3,1),(2,3),(3,3)}
+	Symmetric Closure:
+	R^* =  {(1,1),(1,2),(1,3),(3,1),(2,3),(2,1),(3,2)}
+
+	(1,2) ∈ R => (2,1) ∈ R^*
+	(2,3) ∈ R => (3,2) ∈ R^*
+	Transitive closure
+
+	(3,1) ∈ R \
+			   > (3,2) ∈ R^*
+	(1,2) ∈ R /
+
+	(3,1) ∈ R \
+			   > (3,3) ∈ R^*			|A * A| = 9
+	(1,3) ∈ R /
+
+	(2,3) ∈ R \
+			   > (2,1) ∈ R^*
+	(3,1) ∈ R /
+
+	(2,3) ∈ R \
+			   > (2,1) ∈ R^*
+	(3,1) ∈ R /
+
+	R^* = {(1,1),(1,2),(1,3),(3,1),(2,3),  (3,2),(3,3),(2,1),(2,2)}
+Note:
+	If a relation is not antisymmetric, it means that it contains ordered pairs of the form (x,y) and (y,x), where x ≠ .
+	Adding ordered pairs to R will not change this. Hence, there is no such thing as the antisymmetric closure

@@ -1,0 +1,54 @@
+20) lim		sqrt(sin2x/sin5x) = 0/0
+	x->0
+
+	= sqrt(
+		lim 	sin2x			5x			2x
+		x->0 ------------ * ----------- * ---------
+				 2x				sin5x		5x
+		
+	)
+
+  Notes
+----------
+
+1. If the limit of the definition of the derivative does not exist at x=x_0, then the derivative does not exist at x=x_0
+We say that f(x) is not differentiable of x=x_0
+
+2. The process of finding derivatives is called **Differentiation**
+
+3. f'(x) = dy/dx = (d/dx) [f(x)]
+"d" is difference of y_1 - y_0 etc.
+
+4. The derivative of x=x_0
+		f'(x_0) = dy/dx |		 =	d/dx [f(x_0)]
+						| x=x_0
+
+5. Find f'(x) using the definition is eferred to as the **infinitecimal** approach to finding derivatives, i.e. as h -> 0
+
+
+		Techniques of Differentiation
+===============================================
+1. If c is any constant, d/dx [c] = 0
+
+2.  d/dx [x^k] = k*x^k-1		For any constant k
+
+
+d/dx [sqrt(x)] = d/dx [x^1/2] => 1/2 x^(-1/2)
+
+f(x) = x^0 = 1
+f'(x) = 0
+
+
+
+	Rules of Differentiation
+--------------------------------
+Let c be any constant,
+f' be the derivataive of f
+g' ---------| |--------- g
+
+examples:
+1. d/dx [c*f(x)] = c*(d/dx) [f(x)] = c*f'
+
+e.g: y = 7x^-5 		dy/dx = 7*(-5*x^-6) = -35x^-6
+
+2. d/dx [f(x)+g(x)] = d/dx [f(x)] + d/dx [g(x)] = f' + g'
